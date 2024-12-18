@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVELOPE BY BX PERFECT</title>
+    <!-- Updated Ad Script -->
+
+
+  
+     
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8597204' data-sdk='show_8597204'></script>
+     <!-- এইখানে আপনার monetag bot javascript code ta diben  -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        .app-container {
+            text-align: center;
+            background: linear-gradient(145deg, #ffffff, #e6e8eb);
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .developer-label {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #555;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Ad buttons */
+        .ad-button {
+            margin: 10px 0;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+            width: 90%;
+            max-width: 300px;
+        }
+        .blue-button { background-color: #007bff; }
+        .green-button { background-color: #28a745; }
+        .yellow-button { background-color: #ffc107; }
+        .ad-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .ad-button:active {
+            transform: scale(0.97);
+        }
+
+        /* Smaller circle loading animation */
+        .loading-btn {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin: 20px 0;
+            border-radius: 50%;
+            border: 6px solid transparent;
+            border-top: 6px solid #ff5733; /* Orange */
+            border-right: 6px solid #33ff57; /* Green */
+            border-bottom: 6px solid #3375ff; /* Blue */
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .countdown-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            font-weight: bold;
+            animation: colorChange 1s linear infinite;
+        }
+        @keyframes colorChange {
+            0% { color: #ff5733; } /* Orange */
+            33% { color: #33ff57; } /* Green */
+            66% { color: #3375ff; } /* Blue */
+            100% { color: #ff5733; } /* Back to Orange */
+        }
+
+        /* CONTRACT button */
+        .contract-button {
+            margin-top: 20px;
+            background-color: #dc3545; /* Red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .contract-button:hover {
+            background-color: #c82333;
+        }
+
+        /* Highlighted text below CONTRACT button */
+        .help-text {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(145deg, #ffeb3b, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="developer-label">DEVELOPE BY BX PERFECT</div>
+
+        <!-- Ad buttons -->
+        <button class="ad-button blue-button" onclick="showRewardedAd(1)">Show Ad 1</button>
+        <button class="ad-button green-button" onclick="showRewardedAd(2)">Show Ad 2</button>
+        <button class="ad-button yellow-button" onclick="showRewardedAd(3)">Show Ad 3</button>
+
+        <!-- Circle loading button with countdown inside -->
+        <div class="loading-btn" id="loadingBtn" onclick="startCountdown()">
+            <div class="countdown-text" id="countdownDisplay">3</div>
+        </div>
+
+        <!-- CONTRACT button -->
+        <button class="contract-button" onclick="redirectToTelegram()">CONTRACT</button>
+
+        <!-- Highlighted help text -->
+        <div class="help-text">CLICK ON CONTRACT FOR ANY PROBLEM 24/7 🌟</div>
+    </div>
+
+    <script>
+        let countdown = 3;
+        let countdownInterval;
+
+        // Check if returning from redirection
+        if (sessionStorage.getItem('redirected')) {
+            sessionStorage.removeItem('redirected'); // Remove flag
+            location.reload(); // Instantly reload
+        }
+
+        function showRewardedAd(adIndex)
+        
+        // এইখানে show_8544221 কোড টা দিবেন
+        
+        {
+            if (typeof show_8597204 === 'function') {
+                show_8597204().then(() => {
+                    // Redirect immediately after showing the ad
+                    redirectToAd();
+                }).catch(error => {
+                    console.error('Ad failed to load or display:', error);
+                });
+            } else {
+                console.error('Ad script is not loaded or available.');
+            }
+        }
+
+        function startCountdown() {
+            const countdownDisplay = document.getElementById("countdownDisplay");
+
+            countdown = 3;
+            clearInterval(countdownInterval);
+
+            countdownInterval = setInterval(() => {
+                countdownDisplay.textContent = countdown;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(countdownInterval);
+                    redirectToAd();
+                }
+            }, 1000);
+        }
+
+        function redirectToAd() {
+            sessionStorage.setItem('redirected', 'true'); // Set flag
+
+            if (typeof show_8597204 === 'function') {
+                show_8597204().then(() => {
+                    setTimeout(() => {
+                        window.location.href = window.location.href; // Redirect back
+                    }, 17000); // 17 seconds delay
+                }).catch(error => {
+                    console.error('Error showing ad during redirection:', error);
+                });
+            }
+        }
+
+        function redirectToTelegram() {
+            window.location.href = "https://t.me/team_bx1"; // Redirect to Telegram link
+        }
+
+        // Start countdown on page load
+        window.onload = function() {
+            startCountdown();
+        };
+    </script>
+</body>
+
+</html>
+
+
